@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/etien/ClaudeMixx/mixx-obs-plugin/**)",
+      "Bash(\"/c/Program Files/CMake/bin/cmake\" .. -G \"Visual Studio 17 2022\" -A x64 -B build)",
+      "Bash(rm:*)",
+      "Bash(DUMPBIN=\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe\"\n\"$DUMPBIN\" /EXPORTS \"/c/Program Files/obs-studio/bin/64bit/obs.dll\" 2>&1 | head -30)",
+      "Bash(git add:*)"
+    ]
+  }
+}

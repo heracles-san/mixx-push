@@ -1,0 +1,70 @@
+{
+  "name": "mixx-desktop",
+  "version": "1.0.0",
+  "description": "Mixx — Studio de diffusion audio",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "concurrently -n vite,electron -c cyan,magenta \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build": "npm run build:renderer && npm run build:electron && electron-builder",
+    "pack": "npm run build:renderer && npm run build:electron && electron-builder --dir",
+    "rebuild-native": "electron-rebuild -f -w wasapi_capture",
+    "rebuild-helper": "node-gyp build",
+    "rebuild-all": "npm run rebuild-helper && npm run rebuild-native"
+  },
+  "build": {
+    "appId": "app.mixx.studio",
+    "productName": "Mixx Studio",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico",
+      "signingHashAlgorithms": null,
+      "sign": null
+    },
+    "files": [
+      "dist-renderer/**/*",
+      "dist-electron/**/*",
+      "public/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/mixx-audio-router.dll",
+        "to": "mixx-audio-router.dll"
+      }
+    ],
+    "publish": {
+      "provider": "github",
+      "owner": "heracles-san",
+      "repo": "mixx-push"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.0.0",
+    "concurrently": "^8.0.0",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-rebuild": "^3.2.9",
+    "node-addon-api": "^8.6.0",
+    "png-to-ico": "^3.0.1",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "wait-on": "^7.0.0"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "livekit-client": "^2.17.3",
+    "lucide-react": "^0.344.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
