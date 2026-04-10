@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Sliders, Mic, Music, Bell, Gamepad2, Headphones, Mic2,
   Radio, StopCircle, Volume2, RefreshCw, ChevronDown,
-  AlertTriangle, CheckCircle, LogOut,
+  AlertTriangle, CheckCircle, LogOut, LayoutDashboard,
 } from "lucide-react";
 import { Room, LocalAudioTrack } from "livekit-client";
 
@@ -291,6 +291,15 @@ export default function StudioScreen({ user, onLogout }: Props) {
           )}
           {user.image && <img src={user.image} alt="" className="w-6 h-6 rounded-full" />}
           <span className="text-xs text-gray-400">{user.name}</span>
+          <a
+            href="https://miixx.fr/dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-purple-400 transition-colors"
+            title="Dashboard"
+          >
+            <LayoutDashboard className="w-3.5 h-3.5" />
+          </a>
           <button onClick={onLogout} className="text-gray-600 hover:text-gray-300 transition-colors">
             <LogOut className="w-3.5 h-3.5" />
           </button>
