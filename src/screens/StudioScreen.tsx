@@ -278,7 +278,7 @@ export default function StudioScreen({ user, onLogout }: Props) {
             <Sliders className="w-3.5 h-3.5 text-white" />
           </div>
           <span className="font-bold text-sm bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            Mixx Studio
+            Miixx Studio
           </span>
         </div>
 
@@ -308,7 +308,7 @@ export default function StudioScreen({ user, onLogout }: Props) {
             </div>
             <h2 className="font-semibold mb-2">Autoriser l&apos;accès aux périphériques audio</h2>
             <p className="text-gray-400 text-sm mb-4 max-w-sm mx-auto">
-              Mixx Studio a besoin d&apos;accéder à tes périphériques pour lister les sources disponibles.
+              Miixx Studio a besoin d&apos;accéder à tes périphériques pour lister les sources disponibles.
             </p>
             <button
               onClick={requestPermission}

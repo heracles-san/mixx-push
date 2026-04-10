@@ -25,7 +25,7 @@ function createWindow() {
     height: 680,
     minWidth: 760,
     minHeight: 560,
-    title: "Mixx Studio",
+    title: "Miixx Studio",
     backgroundColor: "#0f0f0f",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -65,7 +65,7 @@ function createTray() {
 
   const contextMenu = Menu.buildFromTemplate([
     {
-      label: "Mixx Studio",
+      label: "Miixx Studio",
       enabled: false,
     },
     { type: "separator" },
@@ -86,7 +86,7 @@ function createTray() {
     },
   ]);
 
-  tray.setToolTip("Mixx Studio");
+  tray.setToolTip("Miixx Studio");
   tray.setContextMenu(contextMenu);
   tray.on("double-click", () => mainWindow?.show());
 }
@@ -232,7 +232,7 @@ function setupAutoUpdater() {
     dialog.showMessageBox({
       type: "info",
       title: "Mise à jour disponible",
-      message: "Une nouvelle version de Mixx Studio est disponible.",
+      message: "Une nouvelle version de Miixx Studio est disponible.",
       detail: "Le téléchargement démarre en arrière-plan. L'installation se fera automatiquement à la prochaine fermeture.",
       buttons: ["OK"],
     });
@@ -243,7 +243,7 @@ function setupAutoUpdater() {
       type: "info",
       title: "Mise à jour prête",
       message: "La mise à jour est téléchargée.",
-      detail: "Redémarre Mixx Studio pour appliquer la mise à jour.",
+      detail: "Redémarre Miixx Studio pour appliquer la mise à jour.",
       buttons: ["Redémarrer maintenant", "Plus tard"],
       defaultId: 0,
     }).then(({ response }) => {
@@ -283,7 +283,7 @@ async function installObsPlugin() {
     title: "Plugin OBS Mixx",
     message: "Installer le plugin audio Mixx pour OBS ?",
     detail:
-      "Ce plugin permet à OBS d'envoyer l'audio de chaque source directement dans Mixx Studio.\n\nUne fenêtre de confirmation Windows (UAC) va s'ouvrir.",
+      "Ce plugin permet à OBS d'envoyer l'audio de chaque source directement dans Miixx Studio.\n\nUne fenêtre de confirmation Windows (UAC) va s'ouvrir.",
     buttons: ["Installer", "Plus tard"],
     defaultId: 0,
     cancelId: 1,

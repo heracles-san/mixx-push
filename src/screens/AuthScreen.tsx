@@ -26,7 +26,7 @@ export default function AuthScreen({ onLogin }: Props) {
         </div>
         <div className="text-center">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            Mixx Studio
+            Miixx Studio
           </h1>
           <p className="text-gray-500 text-sm mt-1">App de diffusion audio streamer</p>
         </div>
