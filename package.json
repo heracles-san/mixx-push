@@ -1,6 +1,6 @@
 {
   "name": "mixx-desktop",
-  "version": "1.0.1",
+  "version": "1.3.2",
   "description": "Mixx — Studio de diffusion audio",
   "main": "dist-electron/main.js",
   "scripts": {
