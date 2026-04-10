@@ -7,7 +7,7 @@ import { autoUpdater } from "electron-updater";
 
 const MIXX_OBS_PORT = 47891;
 
-const MIXX_API = "https://mixx-app.vercel.app";
+const MIXX_API = "https://miixx.fr";
 
 // app.isPackaged est false en dev (electron .) et true en production packagée
 const isDev = !app.isPackaged;
